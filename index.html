@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="_.png">
+</head>
+<body>
+<button onclick="window.location = 'https://github.com/Dragon77mathbye'" id="githubBtn">Github</button>
+<button onclick="window.location = 'https://discord.com/users/690680148122664991'" id="discordBtn">Discord</button>
+<br><br>
+<button onclick="window.location = 'Layers-of-Infinity/index.html';" id="layersBtn">Layers of Infinity</button>
+<button onclick="window.location = 'bad-mining-game/index.html';" id="miningBtn">Bad Mining Game</button>
+<button onclick="window.location = 'cooking/index.html';" id="cookingBtn">Cooking</button>
+<button onclick="window.location = 'Undunow/index.html';" id="undunowBtn">Undunow</button>
+<script>
+    let bgScroll = 0;
+    let r = [];
+    for (let i = 0; i < 12; i++) {
+        r[i] = Math.random() * 2 - 1;
+    }
+    setInterval(() => {
+        bgScroll++;
+        document.getElementById("githubBtn").style.backgroundPosition = `${bgScroll * r[0]}px ${bgScroll * r[1]}px`;
+        document.getElementById("discordBtn").style.backgroundPosition = `${bgScroll * r[2]}px ${bgScroll * r[3]}px`;
+        document.getElementById("layersBtn").style.backgroundPosition = `${bgScroll * r[4]}px ${bgScroll * r[5]}px`;
+        document.getElementById("miningBtn").style.backgroundPosition = `${bgScroll * r[6]}px ${bgScroll * r[7]}px`;
+        document.getElementById("cookingBtn").style.backgroundPosition = `${bgScroll * r[8]}px ${bgScroll * r[9]}px`;
+        document.getElementById("undunowBtn").style.backgroundPosition = `${bgScroll * r[10]}px ${bgScroll * r[11]}px`;
+    }, 20);
+    setInterval(() => {
+        document.getElementById("cookingBtn").style.backgroundImage = `url('cooking/img/food/${Object.keys(foods)[~~(Math.random() * Object.keys(foods).length)]}.png')`;
+    }, 500);
+</script>
+<script src="cooking/foods.js"></script>
+</body>
+</html>
